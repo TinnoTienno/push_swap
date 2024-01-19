@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"type_traits": "c",
+		"push_swap.h": "c",
+		"libft.h": "c",
+		"commands.h": "c"
+	}
+}
