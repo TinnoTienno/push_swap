@@ -1,48 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/19 00:27:10 by eschussl          #+#    #+#             */
-/*   Updated: 2024/01/19 13:47:33 by eschussl         ###   ########.fr       */
+/*   Created: 2024/01/19 13:47:10 by eschussl          #+#    #+#             */
+/*   Updated: 2024/01/19 13:54:43 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void 	ft_swap_a(t_PSlist *a, t_PSlist *b)
+void	ft_push_a(t_PSlist *a, t_PSlist *b)
 {
-	(void) b;
 	t_PSelement *tmp;
 	
-	tmp = a->first;
-	a->first = a->first->next;
-	a->first->next = tmp;
-	ft_printf("sa\n");
-}
-
-void 	ft_swap_b(t_PSlist *a, t_PSlist *b)
-{
-	(void) a;
-	t_PSelement *tmp;
-	
+	if (!b->first)
+		return ;
 	tmp = b->first;
 	b->first = b->first->next;
-	b->first->next = tmp;
-	ft_printf("sb\n");
+	tmp->next = a->first;
+	a->first = tmp;
+	a->total++;
+	b->total--;
+	ft_printf("pa\n");
+	
 }
 
-void	ft_swap_both(t_PSlist *a, t_PSlist *b)
+void	ft_push_b(t_PSlist *a, t_PSlist *b)
 {
 	t_PSelement *tmp;
 	
+	if (!a->first)
+		return ;
 	tmp = a->first;
 	a->first = a->first->next;
-	a->first->next = tmp;
-	tmp = b->first;
-	b->first = b->first->next;
-	b->first->next = tmp;
-	ft_printf("ss\n");
+	tmp->next = b->first;
+	b->first = tmp;
+	b->total++;
+	a->total--;
+	ft_printf("pb\n");
 }

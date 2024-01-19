@@ -6,7 +6,7 @@
 #    By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 18:13:27 by eschussl          #+#    #+#              #
-#    Updated: 2024/01/19 11:34:58 by eschussl         ###   ########.fr        #
+#    Updated: 2024/01/19 14:12:32 by eschussl         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,10 @@ SRCS		=	main.c\
 				ft_error.c\
 				ft_newelement.c\
 				$(addprefix $(COMMAND_PATH),\
-				ft_swap.c)
+				ft_swap.c\
+				ft_push.c\
+				ft_rotate.c\
+				ft_reverse_rotate.c)
 OBJS		=	$(addprefix $(OBJS_PATH),$(SRCS:.c=.o))
 INC			=	-I./includes -I./libft/includes
 all : $(NAME)

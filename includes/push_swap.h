@@ -6,7 +6,7 @@
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:52:26 by eschussl          #+#    #+#             */
-/*   Updated: 2024/01/19 11:55:43 by eschussl         ###   ########.fr       */
+/*   Updated: 2024/01/19 13:45:33 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ struct s_PSlist
 	t_PSelement		*first;
 	int				name;
 	int				total;
+};
+
+typedef struct	s_PSstruct	t_PSstruct;
+struct	s_PSstruct
+{
+	int	min;
+	int	max;
+	int q1;
+	int q3;
+	int med;
 };
 
 t_PSlist	*ft_listinit(int c);
