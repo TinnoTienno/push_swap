@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newelement.c                                    :+:      :+:    :+:   */
+/*   ft_display_struct.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 18:05:54 by eschussl          #+#    #+#             */
-/*   Updated: 2024/01/23 11:50:39 by eschussl         ###   ########.fr       */
+/*   Created: 2024/01/19 14:37:10 by eschussl          #+#    #+#             */
+/*   Updated: 2024/01/19 14:43:03 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_pslist *ft_newelement(t_pslist *list, int nb)
+void	ft_display_struct(t_PSstruct *strct)
 {
-	t_pselement *new_element;
-	
-	new_element = malloc (sizeof(t_pselement));
-	if (!new_element)
-		return (ft_freelistps(list), NULL);
-	new_element->value = nb;
-	new_element->index = 0;
-	new_element->next = list->head;
-	list->head = new_element;
-	list->total++;
-	return (list);
+	ft_printf("== Display Struct == \n+--> MIN : %d\n+--> Q1  : %d\n+--> MED : %d\n+--> Q3  : %d\n+--> MAX : %d\n", strct->min, strct->q1, strct->med, strct->q3, strct->max);
 }

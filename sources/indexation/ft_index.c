@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newelement.c                                    :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 18:05:54 by eschussl          #+#    #+#             */
-/*   Updated: 2024/01/23 11:50:39 by eschussl         ###   ########.fr       */
+/*   Created: 2024/01/19 15:47:50 by eschussl          #+#    #+#             */
+/*   Updated: 2024/01/22 11:38:37 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_pslist *ft_newelement(t_pslist *list, int nb)
+t_PSlist *ft_index(t_PSlist *list, t_PSstruct *strct)
 {
-	t_pselement *new_element;
-	
-	new_element = malloc (sizeof(t_pselement));
-	if (!new_element)
-		return (ft_freelistps(list), NULL);
-	new_element->value = nb;
-	new_element->index = 0;
-	new_element->next = list->head;
-	list->head = new_element;
-	list->total++;
-	return (list);
+	int index;
+	int nb;
+	t_PSelement *elem;
 }

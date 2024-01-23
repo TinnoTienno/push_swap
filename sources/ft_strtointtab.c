@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newelement.c                                    :+:      :+:    :+:   */
+/*   ft_strtointtab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 18:05:54 by eschussl          #+#    #+#             */
-/*   Updated: 2024/01/23 11:50:39 by eschussl         ###   ########.fr       */
+/*   Created: 2024/01/23 13:55:15 by eschussl          #+#    #+#             */
+/*   Updated: 2024/01/23 15:03:44 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_pslist *ft_newelement(t_pslist *list, int nb)
+int	*ft_strtointtab(char **tab, int *tabint, t_psstruct *s_ps)
 {
-	t_pselement *new_element;
-	
-	new_element = malloc (sizeof(t_pselement));
-	if (!new_element)
-		return (ft_freelistps(list), NULL);
-	new_element->value = nb;
-	new_element->index = 0;
-	new_element->next = list->head;
-	list->head = new_element;
-	list->total++;
-	return (list);
+	int i;
+
+	i = 0;
+	(void) s_ps;
+	while (tab[i])
+	{
+		tabint[i] = ft_atoi(tab[i]);
+		if (tabint[i] > s_ps->max)
+			s_ps->max = tabint[i];
+		if (tabint[i] < s_ps->min)
+			s_ps->min = tabint[i];
+		i++;
+	}
+	return (tabint);
 }

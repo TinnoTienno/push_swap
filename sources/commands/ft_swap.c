@@ -6,43 +6,43 @@
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 00:27:10 by eschussl          #+#    #+#             */
-/*   Updated: 2024/01/19 13:47:33 by eschussl         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:48:55 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void 	ft_swap_a(t_PSlist *a, t_PSlist *b)
+void 	ft_swap_a(t_pslist *a, t_pslist *b)
 {
 	(void) b;
-	t_PSelement *tmp;
+	t_pselement *tmp;
 	
-	tmp = a->first;
-	a->first = a->first->next;
-	a->first->next = tmp;
+	tmp = a->head;
+	a->head = a->head->next;
+	a->head->next = tmp;
 	ft_printf("sa\n");
 }
 
-void 	ft_swap_b(t_PSlist *a, t_PSlist *b)
+void 	ft_swap_b(t_pslist *a, t_pslist *b)
 {
 	(void) a;
-	t_PSelement *tmp;
+	t_pselement *tmp;
 	
-	tmp = b->first;
-	b->first = b->first->next;
-	b->first->next = tmp;
+	tmp = b->head;
+	b->head = b->head->next;
+	b->head->next = tmp;
 	ft_printf("sb\n");
 }
 
-void	ft_swap_both(t_PSlist *a, t_PSlist *b)
+void	ft_swap_both(t_pslist *a, t_pslist *b)
 {
-	t_PSelement *tmp;
+	t_pselement *tmp;
 	
-	tmp = a->first;
-	a->first = a->first->next;
-	a->first->next = tmp;
-	tmp = b->first;
-	b->first = b->first->next;
-	b->first->next = tmp;
+	tmp = a->head;
+	a->head = a->head->next;
+	a->head->next = tmp;
+	tmp = b->head;
+	b->head = b->head->next;
+	b->head->next = tmp;
 	ft_printf("ss\n");
 }

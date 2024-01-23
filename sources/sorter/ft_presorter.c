@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newelement.c                                    :+:      :+:    :+:   */
+/*   ft_presorter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 18:05:54 by eschussl          #+#    #+#             */
-/*   Updated: 2024/01/23 11:50:39 by eschussl         ###   ########.fr       */
+/*   Created: 2024/01/23 11:56:39 by eschussl          #+#    #+#             */
+/*   Updated: 2024/01/23 17:59:38 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "sorter.h"
 
-t_pslist *ft_newelement(t_pslist *list, int nb)
+t_psstruct	*ft_presorter(t_psstruct *s_ps, char **tab, int size)
 {
-	t_pselement *new_element;
-	
-	new_element = malloc (sizeof(t_pselement));
-	if (!new_element)
-		return (ft_freelistps(list), NULL);
-	new_element->value = nb;
-	new_element->index = 0;
-	new_element->next = list->head;
-	list->head = new_element;
-	list->total++;
-	return (list);
+	int	*tabint;
+
+	tabint = malloc (sizeof(int) * size);
+	if (!tabint)
+		return (free (s_ps), NULL);
+	tabint = ft_strtointtab(tab, tabint, s_ps);
+	ft_quicksorttab(s_ps, tabint, size);
+	s_ps->med = tabint[size / 2];
+	s_ps->q1 = tabint[size / 4];
+	s_ps->q3 = tabint[(size / 2)  + size / 4];
+	free (tabint);
+	return (s_ps);
 }
