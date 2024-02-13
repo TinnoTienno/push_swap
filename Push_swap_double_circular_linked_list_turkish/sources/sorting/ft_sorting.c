@@ -6,7 +6,7 @@
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:59:53 by eschussl          #+#    #+#             */
-/*   Updated: 2024/02/10 13:55:58 by eschussl         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:14:52 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_sorting(t_pslist *a)
 		ft_sort3(a, b);
 	a->min = a->head->value;
 	a->max = a->head->previous->value;
-	ft_pushing_to_a(a , b);
+	ft_pushing_to_q(a , b);
 	ft_lookformin(a, b);
 	ft_freelist_ps(b);
 }

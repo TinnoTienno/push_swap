@@ -6,7 +6,7 @@
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:26:35 by eschussl          #+#    #+#             */
-/*   Updated: 2024/02/09 14:50:42 by eschussl         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:33:33 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,4 @@ void	ft_pushing_to_a(t_pslist *a, t_pslist *b)
 		b->head->nbmovea = ft_nbmovetoa(a, b->head->value);
 		ft_pushtoa(a, b);
 	}
-	
 }

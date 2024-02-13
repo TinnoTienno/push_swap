@@ -6,7 +6,7 @@
 /*   By: eschussl <eschussl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:28:56 by eschussl          #+#    #+#             */
-/*   Updated: 2024/02/10 11:30:40 by eschussl         ###   ########.fr       */
+/*   Updated: 2024/02/13 12:26:37 by eschussl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_nbmoveb(int value, t_pslist *b)
 	t_pselement *elem;
 	int med;
 	
-	if (b->total %2 == 0)
+	if (b->total % 2 == 0)
 		med = b->total / 2 - 1;
 	else
 		med = b->total / 2;
